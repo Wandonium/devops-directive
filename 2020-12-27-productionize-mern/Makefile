@@ -18,3 +18,11 @@ build-production:
 
 run-production:
 	ENV=prod docker-compose -f docker-compose-prod.yml up
+
+SSH_STRING:=wando@102.37.138.143
+
+ssh:
+	ssh ${SSH_STRING}
+
+copy-files:
+	scp -r ./* ${SSH_STRING}:/home/wando/docker-tut

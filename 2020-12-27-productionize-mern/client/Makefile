@@ -12,5 +12,5 @@ build-production:
 	docker build \
 	-t react-app-prod:prod \
 	--build-arg CADDYFILE=Caddyfile.prod \
-	--build-arg BASE_URL=https://mern.ngazi.media/api \
+	--build-arg BASE_URL=http://mern.ngazi.media/api \
 	-f Dockerfile.production .

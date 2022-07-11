@@ -1,5 +1,4 @@
-mern.ngazi.media:443 {
-    tls: hillarywando@gmail.com
+mern.ngazi.media:80 {
     root * /srv
     route {
         reverse_proxy /api* api-server:5000
