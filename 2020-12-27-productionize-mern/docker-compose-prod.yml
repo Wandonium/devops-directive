@@ -1,17 +1,20 @@
 version: "3"
 services:
   react-app:
-    image: react-app-prod
+    image: react-app-prod:${ENV}
     restart: unless-stopped
-    stdin_open: true
     ports:
-      - "80:80"
+      - "81:80"
       - "443:443"
     networks:
       - mern-app
+    volumes:
+      - caddy-data:/data
+      - caddy-config:/config
   api-server:
-    image: api-server-prod
+    image: api-server
     restart: unless-stopped
+    env_file: ./server/config/${ENV}.env
     ports:
       - "5000:5000"
     networks:
